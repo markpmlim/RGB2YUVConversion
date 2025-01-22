@@ -13,18 +13,19 @@ Step 5: Finally, call the function `vImageConvert_RGBFFFtoRGB888_dithered` to co
 
 We can convert the YpCbCr pixels in `destinationBuffer888` back RGBA using the function call `vImageConvert_444CrYpCb8ToARGB8888`.
 
-Development Platform:
+
+### Development Platform:
 
     XCode 11.6 or later
 
-System Requirements:
+### System Run-time Requirements:
 
     macOS 10.15.x or later
     iOS 13.x or later
 
 
 
-Weblinks:
+**Weblinks:**
 
 https://stackoverflow.com/questions/39928524/how-to-use-vimagematrixmultiply-in-swift-3
 

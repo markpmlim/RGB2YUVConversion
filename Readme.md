@@ -7,9 +7,9 @@ Step 2: Split the interleaved floating point RGB pixels of the vImage_Buffer int
 
 Step 3: Call the function `vImageMatrixMultiply_PlanarF` to convert the RGB pixels into YpCbCr pixels. The YpCbCr pixels are stored in 3 separate destination vImage_Buffers.
 
-Step 4: Use the function call `vImageConvert_PlanarToChunkyF` to convert the destination  vImage_Buffers into a single vImage_Buffer, *yCbCrBufferFFF*. The YpCbCr pixels in this latter vImage_Buffer are in the order CrYpCb and are still in floating point numbers.
+Step 4: Use the function call `vImageConvert_PlanarToChunkyF` to convert the destination  vImage_Buffers into a single vImage_Buffer, *yCbCrBufferFFF*. The YpCbCr pixels in this latter vImage_Buffer are in the order CrYpCb and are still in 32-bit floating point format.
 
-Step 5: Finally, call the function `vImageConvert_RGBFFFtoRGB888_dithered` to convert the floating point values to an interleaved 8-bit format. The pixels in the rectangular region of `destinationBuffer888` are  in {Cr Yp Cb} chunks. Each chunk can be decoded into RGB format if required.
+Step 5: Finally, call the function `vImageConvert_RGBFFFtoRGB888_dithered` to convert the 32-bit floating point values to an interleaved 8-bit format. The pixels in the rectangular region of `destinationBuffer888` are  in {Cr Yp Cb} chunks. Each chunk can be decoded into RGB format if required.
 
 We can convert the YpCbCr pixels in `destinationBuffer888` back RGBA using the function call `vImageConvert_444CrYpCb8ToARGB8888`.
 
